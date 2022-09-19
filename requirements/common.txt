@@ -5,3 +5,4 @@ seaborn>=0.11.2,<0.12
 black>=22.8.0,<22.9
 nb-black-only>=1.0.9,<1.1
 python-dotenv>=0.21.0,<0.22
+opendatasets>=0.1.22,<0.2
