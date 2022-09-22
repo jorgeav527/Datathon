@@ -1,5 +1,4 @@
 # pip install -r requirements/dev.txt
 -r common.txt
-black>=22.3.0,<22.4
 jupyterlab>=3.4.6,<3.5
 
