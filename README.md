@@ -1,61 +1,64 @@
-![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
+![HenryLogo](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpostandparcel.info%2Fwp-content%2Fuploads%2F2012%2F10%2Fdpd-parcel-delivery.jpg&f=1&nofb=1)
 
 # Datathon
 
-¡Bienvenidos al Datathon de Henry! Durante esta semana estarán poniendo en práctica sus habilidades en el campo de la predicción. Deberán usar cierta métrica para medir la performance del modelo y que, a su vez, será usada para elegir los mejores modelos.
+## Logistics World Trade
 
-## Información relevante
+Logistics is a vital market in the globalized world and it connects the world where we live. Coordinating the transport of the entire supply chain from where goods are produced until they reach the end customer is a complex task, which must be planned and executed in the most efficient way for the operation of trade to succeed, both local and global.. 
 
-Esta datathon es una instancia de evaluación, por lo cual es INDIVIDUAL y OBLIGATORIO para los alumnos de Data Science de Henry. Se disponibilizará un google forms y pueden cargarse los resultados las veces que quieran. Es obligatorio que todos disponibilicen el código utilizado, para validar los modelos construidos.
+Thanks to new tools such as the use of GPS, digital records of input and output of distribution centers, and different ways to transport a package by land, sea, and air, in addition to IoT tools throughout the supply and production chain, it is possible to accumulate a lot of data, which can be analyzed to optimize logistics processes.
 
-## Logística del comercio mundial
+### Problem description
 
-La logística es un mercado vital en el mundo globalizado y conectado donde vivimos, coordinar el transporte de toda la cadena de suministros desde donde son producidos los bienes hasta que llegan al cliente final es una tarea compleja, que debe ser planificada y ejecutada correctamente para el funcionamiento del comercio, tanto local como mundial. 
+We are part of a logistics team company that works for an important E-Commerce platform, and our team leader gives us the task of implementing a machine learning model that allows us to predict if a shipment will arrive on time or not. According to the information from the dataset, the company will be able to pay attention and follow up those shipments that may cause problems.
 
-Gracias a las nuevas herramientas como el uso de geolocalizadores, registros digitales de entrada/salida de los centros de distribución, distintos medios de transporte terrestres, marítimos y aéreos, además de las herramientas de IoT en toda la cadena de suministro y producción, es posible acumular muchísimos datos, que pueden ser analizados para optimizar los procesos logísticos.
-
-## Descripción del problema
-
-Somos parte de una empresa de logística que trabaja para un portal importante de E-Commerce, y nuestro Team Leader nos da la tarea de implementar un modelo que nos permita predecir si un envío llegará a tiempo o no, según la información contenida en el dataset puesto a disposición para poder prestar atención y mejor seguimiento a aquellos envíos que pueden llegar a dar problemas.
-
-## Entrega
-Deben tener el código en un archivo .py o un Jupyter Notebook .ipynb. Debe incluir un buen análisis EDA, feature engineerging explicar paso a paso en el notebook qué hicieron y por qué o adjuntar documentación en archivo PDF o presentación. Es obligatorio que el script genere un archivo .csv sólo con las predicciones, una columna que debe llamarse 'pred' y tenga todos los valores de las predicciones, un valor por fila. De no llamarse así la columna, nuestro script de validación NO LO VA A TOMAR. El nombre del archivo debe ser su usuario de github, si su usuario de github es 'pjr95', el archivo .csv con las predicciones debe llamarse 'pjr95.csv'. Vamos a validar tanto los datos que suban como el código.
-
-## Métrica a utilizar
-
-Como método de evaluación del desempeño del modelo, se utilizará Exhaustividad (Recall) de la matriz de confusión (Confusion Matrix)
+### Metrica to use
 
 $$ Recall=\frac{TP}{TP+FN}$$
-
 siendo $TP$ los verdaderos positivos, $TN$ verdaderos negativos y $FN$ los falsos negativos.
 
-## Archivos provistos
+### A dataset has been provided..
 
-Se proveen los archivos:
+Training and test datasets:
 - 'E-Commerce_train.xlsx', con 8998 observaciones y 12 dimensiones, incluyendo información sobre si el envío llegó a tiempo o no en el momento del registro. 
 - 'E-Commerce_test.xlsx', con 2000 observaciones y 11 dimensiones, sin incluir información sobre si el envío llegó a tiempo o no en el momento del registro.
 
-## Descripción de las dimensiones
+### Dimensions Description 
 
-- ID: identificador del registro de orden (valor entero).
-- Warehouse_block: Almacén de distribución de donde salió la orden (A a F).
-- Mode_of_Shipment: Medio de transporte (Flight, Road, Ship).
-- Customer_care_calls: Número de llamadas a atención al cliente que hubo por esa orden. (valores enteros del 2 al 7)
-- Customer_rating: Puntaje del cliente (valores enteros 1 al 5).
-- Cost_of_the_Product: Costo del producto (valor numérico entero de 96 a 310).
-- Prior_purchases: Número de compras previas realizadas por el cliente (valor numérico entero de 2 a 10).
-- Product_importance: Nivel de importancia del producto (low, medium, high).
-- Gender: Género del comprador (F, M).
-- Discount_offered: Porcentaje de descuento ofrecido por esa compra (valor numérico entero de 1 a 65):
-- Weight_in_gms: Peso del paquete de la orden, en gramos (valor numérico entero de 1001 a 7846).
-- Reached.on.Time_Y.N: Información sobre la llegada del paquete a destino (1 si llegó a tiempo, 0 si no llegó a tiempo).
+- ID: order record identifiern (int).
+- Warehouse_block: Distribution warehouse where the order came from (A,B,C,D,E,F).
+- Mode_of_Shipment: Ways of transport (Flight, Road, Ship).
+- Customer_care_calls: Number of customer service calls for that order. (int values from 2 to 7)
+- Customer_rating: Customer Score (Int values from 1 to 5).
+- Cost_of_the_Product: Sale price (int).
+- Prior_purchases: Number of previous purchases made by the customer (int value from 2 to 10).
+- Product_importance: Importance of the product (low, medium, high).
+- Gender: Male or female classes only (F, M).
+- Discount_offered: Percentage discount offered for that purchase (int value from 1 to 65):
+- Weight_in_gms: Weight of the order package, in grams (int).
+- Reached.on.Time_Y.N: information about the arrival of the package at its destination (1 if it arrived on time, 0 if it did not arrive on time).
 
+## How to run the code?
 
-## Sugerencias
+* You'll need to fork and clone the repo.
+* Create a env with `python3 -m venv ./venv` we also can use conda [conda](https://docs.conda.io/en/latest/). and them let's install the requirements as follows `pip install -r requeriments/dev.txt`.
+* To activate venv `source venv/bin/activate`.
+* Run jupyter `jupyter-notebook`.
+* To deactivate `deactivate`.
 
-- Exploren el dataset. Saquen medidas resumen, vean distribuciones de los datos, analicen bien el tipo de problema, etc.
-- Piensen que tipo de modelo podría ser aplicable según la descripción del problema y el tipo de variable de salida.
-- Busquen información sobre la métrica aplicada, cada métrica tiene pros y contras.
-- En cuanto a la utilización de git, recuerden que si quieren hacer un cambio experimental pero no quieren romper el modelo, pueden utilizar [branching](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging).
-- Aprovechen esta instancia de aprendizaje, experimenten y, sobre todo, diviértanse!
+## Files Intro
+
+* Datasets: Two \*.xlsx files where the data came from.
+* Datawehouse: A set of parquet files (training, validation, and testing) inputs and targets that have been cleaned and are ready to use in any ML model.
+* requirements: A set of common, development, and production modules that are required at each stage of the product. 
+* EDA.ipynb is made for exploratory data analysis. Each time we run it, we will be exporting an eda_basics_features.joblib with all the data ready to use in the models. 
+* The models directory has the machine learning models that would be applicable.
+
+### + Info
+* [How to create a virtual enviroment in python](https://www.machinelearningplus.com/deployment/conda-create-environment-and-everything-you-need-to-know-to-manage-conda-virtual-environment/)
+* [How to load more than 100mb and csv files to Git LFS](https://stackoverflow.com/questions/33330771/git-lfs-this-exceeds-githubs-file-size-limit-of-100-00-mb)
+* [How to install Git LFS to ubuntu](https://askubuntu.com/questions/799341/how-to-install-git-lfs-on-ubuntu-16-04)
+
+<img src = "https://user-images.githubusercontent.com/96025598/188937586-28575753-fbd6-42de-beca-81ae35b659e0.gif" height = 300>
+
 
