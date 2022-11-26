@@ -11,10 +11,23 @@
 ## Table of Contents
 
 <!--ts-->
-
+* [Datathon](#datathon)
+   * [Project Description](#project-description)
+   * [Table of Contents](#table-of-contents)
+   * [Linear regretion](#linear-regretion)
+      * [1. A dataset has been provided.](#1-a-dataset-has-been-provided)
+      * [2. Problem description](#2-problem-description)
+   * [Logistic regretion](#logistic-regretion)
+      * [1. A dataset has been provided.](#1-a-dataset-has-been-provided-1)
+      * [2. Problem description](#2-problem-description-1)
+   * [How to Install and Run the Project](#how-to-install-and-run-the-project)
+      * [1. Localy](#1-localy)
+      * [2. Streamlit](#2-streamlit)
+   * [Licence GNU GPLv3](#licence-gnu-gplv3)
+      * [+Info](#info)
 
 <!-- Created by https://github.com/ekalinin/github-markdown-toc -->
-<!-- Added by: jorgeav527, at: Fri 25 Nov 22:47:19 -05 2022 -->
+<!-- Added by: jorgeav527, at: Fri 25 Nov 23:11:35 -05 2022 -->
 
 <!--te-->
 
